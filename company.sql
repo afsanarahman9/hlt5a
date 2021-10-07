@@ -87,6 +87,20 @@ insert into orders(order_id,customer_id,order_status,order_date,required_date,sh
 store_id,staff_id)
 values('603','3', 'yes','1june','10june','5june','103','13');
 select * from orders;
+create table order_items(item_id varchar(20) primary key,order_id varchar(20),foreign key(order_id) references orders(order_id),
+product_id varchar(20),foreign key(product_id) references products(product_id),
+quantity int, 
+list_price varchar(20),
+discount int);
+insert into order_items(item_id,order_id,product_id,quantity,list_price,discount)
+values(801,601,501,2,100,20);
+insert into order_items(item_id,order_id,product_id,quantity,list_price,discount)
+values(802,602,502,4,200,30);
+insert into order_items(item_id,order_id,product_id,quantity,list_price,discount)
+values(803,603,503,5,400,40);
+select * from order_items;
+
+
 
 
 
